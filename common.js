@@ -6,28 +6,36 @@ const SITE_CONFIG = {
   applicationEmail: ''
 };
 
-// Mobil menüyü aç ve kapat.
-const menuButton = document.querySelector('.menu');
-const navigationLinks = document.querySelector('.navlinks');
+// Mobil menü: belge hazır olduğunda güvenilir biçimde bağlanır.
+function initializeMobileMenu() {
+  const menuButton = document.querySelector('.menu');
+  const navigationLinks = document.querySelector('.navlinks');
+  if (!menuButton || !navigationLinks) return;
 
-menuButton?.addEventListener('click', () => {
-  const isOpen = navigationLinks?.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
-});
-
-// Menüdeki bir bağlantıya tıklanınca veya Esc'ye basılınca menüyü kapat.
-const closeMenu = () => {
-  navigationLinks?.classList.remove('open');
-  menuButton?.setAttribute('aria-expanded', 'false');
-};
-
-navigationLinks?.addEventListener('click', (event) => {
-  if (event.target.closest('a')) closeMenu();
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeMenu();
-});
+  const setOpen = (open) => {
+    navigationLinks.classList.toggle('open', open);
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    menuButton.textContent = open ? '✕' : '☰';
+  };
+  menuButton.addEventListener('click', () => {
+    setOpen(!navigationLinks.classList.contains('open'));
+  });
+  navigationLinks.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) setOpen(false);
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeMobileMenu);
+} else {
+  initializeMobileMenu();
+}
 
 // Ana sayfadaki TEKNOFEST geri sayımını oluştur.
 const countdown = document.getElementById('countdown');

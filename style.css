@@ -365,10 +365,13 @@ footer p {
   color:var(--gold)
 }
 
-@media(max-width:800px) {
-  .menu {
-    display:block
-  }
+@media (max-width: 800px) {
+    .menu {
+        display: block;
+        position: relative;
+        z-index: 101;
+        cursor: pointer;
+    }
   .navlinks {
     display:none;
     position:absolute;
@@ -1031,4 +1034,47 @@ section[id] {
 .contact-icon.gmail img { width:48px; height:48px; }
 @media (max-width: 1000px) and (min-width: 769px) {
   .contact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
+/* SOSYAL MEDYA KARTLARI - MOBİL DÜZELTME */
+
+@media (max-width: 768px) {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .contact-card {
+        width: 100%;
+        min-width: 0;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+
+    .contact-card h3 {
+        font-size: 22px;
+    }
+
+    .contact-card p {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-button {
+        display: inline-block;
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* Mobil navigasyon: menünün tıklanabilir ve görünür kalması */
+@media (max-width: 800px) {
+  header { z-index: 1000; }
+  .menu { display: block; position: relative; z-index: 1002; cursor: pointer; touch-action: manipulation; }
+  .navlinks { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 1001; background: #101b29; flex-direction: column; align-items: stretch; padding: 16px 24px; box-shadow: 0 12px 24px rgba(0,0,0,.3); }
+  .navlinks.open { display: flex; }
+  .navlinks a { display: block; padding: 12px 8px; }
 }
