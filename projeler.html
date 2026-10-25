@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Çelikkubbe | Barlas Kayra Team</title>
+
+    <link rel="icon"
+          href="assets/favicon.png"
+          type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* PROJE SAYFASI YERLEŞİMİ */
+
+        .project-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 260px;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* PROJE BİLGİ KARTLARI */
+
+        .project-panel {
+            background: #101d2b;
+            border: 1px solid #2b4153;
+            border-radius: 14px;
+            padding: 27px;
+            margin-bottom: 22px;
+            scroll-margin-top: 110px;
+        }
+
+        .project-panel h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 30px;
+            color: #f3923c;
+            margin: 0 0 14px;
+        }
+
+        .project-panel p,
+        .project-panel li {
+            color: #d4dde7;
+            line-height: 1.8;
+        }
+
+        .project-panel ul {
+            padding-left: 22px;
+        }
+
+        .project-panel li {
+            margin-bottom: 9px;
+        }
+
+        /* SAĞ KISAYOL MENÜSÜ */
+
+        .project-nav {
+            position: sticky;
+            top: 100px;
+            background: #101d2b;
+            border: 1px solid #2b4153;
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .project-nav strong {
+            display: block;
+            color: #f3923c;
+            margin-bottom: 14px;
+        }
+
+        .project-nav a {
+            display: block;
+            padding: 9px 0;
+            color: #d4dde7;
+            text-decoration: none;
+            border-bottom: 1px solid #27394b;
+            font-size: 14px;
+        }
+
+        .project-nav a:hover {
+            color: #f3923c;
+        }
+
+        /* TEKNOLOJİ VE AŞAMA KARTLARI */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        /* BİLGİ NOTLARI */
+
+        .fill-note {
+            border-left: 3px solid #f3923c;
+            background: #192b3c;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin-top: 12px;
+            color: #f1c69f !important;
+        }
+
+        /* PROJE ETİKETLERİ */
+
+        .project-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .project-tag {
+            background: #192b3c;
+            border: 1px solid #39516a;
+            border-radius: 50px;
+            padding: 8px 14px;
+            font-size: 13px;
+            color: #e4edf5;
+        }
+
+        /* FOTOĞRAF GALERİSİ */
+
+        .proje-galeri {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .proje-galeri img {
+            display: block;
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #2b4153;
+            transition: transform 0.3s ease;
+        }
+
+        .proje-galeri img:hover {
+            transform: scale(1.03);
+        }
+
+        /* SAYFA GEÇİŞLERİ */
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 95px;
+        }
+
+        /* TABLET GÖRÜNÜMÜ */
+
+        @media (max-width: 1000px) {
+            .proje-galeri {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* MOBİL GÖRÜNÜM */
+
+        @media (max-width: 850px) {
+            .project-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .project-nav {
+                position: static;
+                order: -1;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .proje-galeri {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ÜST MENÜ -->
+
+    <a class="skip-link" href="#main">
+        İçeriğe geç
+    </a>
+
+    <header>
+        <nav class="wrap">
+
+            <a class="brand" href="index.html">
+
+                <img
+                    src="assets/barlas-kayra-logo.webp"
+                    alt="Barlas Kayra Team logosu"
+                    class="brand-logo"
+                    width="52"
+                    height="52">
+
+                <span class="brand-text">
+                    BARLAS
+                    <span>KAYRA</span>
+                    <small>TEAM</small>
+                </span>
+
+            </a>
+
+            <button
+                class="menu"
+                type="button"
+                aria-controls="nav-links"
+                aria-expanded="false"
+                aria-label="Menüyü aç">
+                ☰
+            </button>
+
+            <div class="navlinks" id="nav-links">
+
+                <a href="index.html">
+                    ANA SAYFA
+                </a>
+
+                <a href="ekip.html">
+                    EKİBİMİZ
+                </a>
+
+                <a href="projeler.html"
+                   class="active"
+                   aria-current="page">
+                    PROJELER
+                </a>
+
+                <a href="haberler.html">
+                    HABERLER
+                </a>
+
+                <a href="basvuru.html">
+                    BAŞVURU
+                </a>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <!-- PROJE BAŞLIĞI -->
+
+        <section class="page-hero">
+
+            <div class="wrap page-hero-inner">
+
+                <div class="page-copy">
+
+                    <div class="eyebrow">
+                        BARLAS KAYRA TEAM | PROJE DOSYASI
+                    </div>
+
+                    <h1>
+                        ÇELİKKUBBE HAVA SAVUNMA SİSTEMLERİ
+                    </h1>
+
+                    <p class="lead">
+                        TEKNOFEST 2026 yarışma kapsamı,
+                        teknik çalışma alanları ve
+                        proje sürecimiz.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span class="project-tag">
+                            Hava Savunma Teknolojileri
+                        </span>
+
+                        <span class="project-tag">
+                            Proje Tanıtımı
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <img
+                    src="assets/barlas-kayra-logo.webp"
+                    alt="Barlas Kayra Team amblemi"
+                    class="page-logo"
+                    width="160"
+                    height="160">
+
+            </div>
+
+        </section>
+
+        <!-- ANA İÇERİK VE SAĞ MENÜ -->
+
+        <section class="section">
+
+            <div class="wrap project-layout">
+
+                <div>
+
+                    <!-- 01 PROJE HAKKINDA -->
+
+                    <article class="project-panel"
+                             id="hakkinda">
+
+                        <h2>01 / Proje Hakkında</h2>
+
+                        <p>
+                            Barlas Kayra Team, Atatürk
+                            Üniversitesi bünyesinde hava
+                            savunma teknolojileri üzerine
+                            çalışan bir öğrenci ekibidir.
+                            Çalışmalarımız, TEKNOFEST 2026
+                            Çelikkubbe Hava Savunma Sistemleri
+                            Yarışması'nın tanımladığı
+                            senaryolar çerçevesinde
+                            yürütülmektedir.
+                        </p>
+
+                        <p>
+                            Yarışma; hedeflerin algılanması,
+                            sınıflandırılması ve takibi ile
+                            manuel ve otonom kontrol
+                            kabiliyetlerini bir araya getiren
+                            sistemlerin değerlendirilmesini
+                            amaçlar.
+                        </p>
+
+                    </article>
+
+                    <!-- 02 PROJENİN AMACI -->
+
+                    <article class="project-panel"
+                             id="amac">
+
+                        <h2>02 / Projenin Amacı</h2>
+
+                        <p>
+                            Amacımız, hava savunma
+                            teknolojilerinde yazılım,
+                            elektronik ve mekanik
+                            disiplinlerini bir araya
+                            getiren bir mühendislik
+                            çalışması yürütmektir.
+                        </p>
+
+                        <p>
+                            Görüntü işleme, kontrol
+                            yazılımları, kullanıcı arayüzleri
+                            ve güvenlik gereksinimleri
+                            üzerine uygulamalı deneyim
+                            kazanmayı hedefliyoruz.
+                        </p>
+
+                    </article>
+
+                    <!-- 03 SİSTEM ÖZELLİKLERİ -->
+
+                    <article class="project-panel"
+                             id="ozellikler">
+
+                        <h2>
+                            03 / Yarışmanın Beklediği
+                            Sistem Özellikleri
+                        </h2>
+
+                        <ul>
+
+                            <li>
+                                <strong>Manuel Kontrol:</strong>
+                                Kullanıcının arayüz üzerinden
+                                sistemi yönettiği çalışma modu.
+                            </li>
+
+                            <li>
+                                <strong>Otonom Çalışma:</strong>
+                                Tanımlanmış görevlerde otomatik
+                                hedef algılama ve takip
+                                yetenekleri.
+                            </li>
+
+                            <li>
+                                <strong>Hedef Tanıma:</strong>
+                                Yarışma kapsamında savaş uçağı,
+                                helikopter, balistik füze ve
+                                mini/mikro İHA maketlerinin
+                                ayırt edilmesi.
+                            </li>
+
+                            <li>
+                                <strong>Dost-Düşman Ayrımı:</strong>
+                                Üçüncü aşamada mavi dost ve
+                                kırmızı düşman hedeflerinin
+                                ayırt edilmesi.
+                            </li>
+
+                            <li>
+                                <strong>Güvenlik:</strong>
+                                Acil durdurma, yasak bölgelerin
+                                tanımlanması ve güvenli
+                                işletim ilkeleri.
+                            </li>
+
+                        </ul>
+
+                        <p class="fill-note">
+                            Bu özellikler yarışma
+                            şartnamesindeki gereksinimlerdir.
+                            Tamamının takımımız tarafından
+                            gerçekleştirildiği anlamına gelmez.
+                        </p>
+
+                    </article>
+
+                    <!-- 04 TEKNOLOJİLER -->
+
+                    <article class="project-panel"
+                             id="teknolojiler">
+
+                        <h2>
+                            04 / Teknoloji ve Çalışma Alanları
+                        </h2>
+
+                        <div class="project-grid">
+
+                            <div>
+
+                                <h3>Yazılım</h3>
+
+                                <p>
+                                    Görüntü işleme, hedef algılama
+                                    hedef imha etme, sistematik
+                                    arayüzler ve PID kontrol algoritmaları
+                                    yarışma kapsamında öne çıkan
+                                    alanlardır.
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <h3>Donanım ve Tasarım</h3>
+
+                                <p>
+                                    Mekanik tasarım,PCB kart tasarımı ,
+                                     elektronik entegrasyon, iki eksenli
+                                    hareket ve elektriksel
+                                    güvenlik yarışma
+                                    gereksinimlerinin
+                                    parçalarıdır.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <!-- 05 GELİŞİM SÜRECİ -->
+
+                    <article class="project-panel"
+                             id="surec">
+
+                        <h2>
+                            05 / Yarışma ve Geliştirme Süreci
+                        </h2>
+
+                        <ul>
+
+                            <li>
+                                <strong>Ön Tasarım Raporu:</strong>
+                                Tasarım yaklaşımının ve temel
+                                mühendislik kararlarının
+                                sunulduğu değerlendirme.
+                            </li>
+
+                            <li>
+                                <strong>Kritik Tasarım Raporu:</strong>
+                                Ayrıntılı sistem tasarımının
+                                ele alındığı değerlendirme.
+                            </li>
+
+                            <li>
+                                <strong>Görev Kabiliyeti Videosu:</strong>
+                                Şartnamede belirtilen
+                                yeteneklerin gösterilmesine
+                                yönelik aşama.
+                            </li>
+
+                            <li>
+                                <strong>Final Değerlendirmesi:</strong>
+                                Sistemin uygulama sonuçlarının,
+                                tasarım kararlarının ve
+                                geliştirme sürecinin
+                                değerlendirilmesi.
+                            </li>
+
+                        </ul>
+
+                        <p class="fill-note">
+                            Ekibimizin tamamladığı aşamalar
+                            ve mevcut durumu doğrulandıktan
+                            sonra burada paylaşılacak.
+                        </p>
+
+                    </article>
+
+                   
+<!-- 06 PROJE GÖRSELLERİ -->
+
+<article class="project-panel" id="gorseller">
+
+    <h2>06 / Proje Görselleri</h2>
+
+    <p>
+        Ekibimizin tasarım, prototip
+        ve test çalışmalarından görüntüler.
+    </p>
+
+    <div class="proje-slider">
+
+        <button
+            class="slider-ok onceki"
+            type="button"
+            onclick="fotoDegistir(-1)"
+            aria-label="Önceki fotoğraf">
+            &#10094;
+        </button>
+
+        <div class="slider-gorseller">
+
+            <img
+                src="assets/foto.jpeg"
+                class="slider-foto aktif"
+                alt="Proje geliştirme görseli">
+
+            <img
+                src="assets/foto1.jpeg"
+                class="slider-foto"
+                alt="Proje test görseli">
+
+            <img
+                src="assets/foto2.jpeg"
+                class="slider-foto"
+                alt="Proje prototip görseli">
+
+        </div>
+
+        <button
+            class="slider-ok sonraki"
+            type="button"
+            onclick="fotoDegistir(1)"
+            aria-label="Sonraki fotoğraf">
+            &#10095;
+        </button>
+
+    </div>
+
+    <div class="slider-sayac">
+        <span id="aktifFoto">1</span> / 3
+    </div>
+
+</article>
+
+
+                    <!-- 08 TEKNOFEST -->
+
+                    <article class="project-panel"
+                             id="teknofest">
+
+                        <h2>
+                            07 / TEKNOFEST 2026
+                            Yarışma Senaryoları
+                        </h2>
+
+                        <div class="project-grid">
+
+                            <div>
+
+                                <h3>
+                                    Aşama 1 | Durağan Hedefler
+                                </h3>
+
+                                <p>
+                                    Manuel modda farklı
+                                    mesafelerde bulunan
+                                    sabit hedeflerle
+                                    gerçekleştirilen
+                                    değerlendirme.
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Aşama 2 | Sürü Senaryosu
+                                </h3>
+
+                                <p>
+                                    Birden fazla hareketli
+                                    hedefin bulunduğu parkurda
+                                    otonom algılama ve takip
+                                    becerilerinin
+                                    değerlendirilmesi.
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Aşama 3 | Dost-Düşman Ayrımı
+                                </h3>
+
+                                <p>
+                                    Hareketli hedeflerin
+                                    tanımlanması ve dost
+                                    unsurların ayırt edilmesi
+                                    üzerine kurulu senaryo.
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <h3>Değerlendirme</h3>
+
+                                <p>
+                                    Raporlar, sunum, sistem
+                                    boyutu ve üç görev aşaması
+                                    birlikte puanlanır.
+                                    Şartnamede toplam
+                                    500 puan öngörülür.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <p class="fill-note">
+                            Bu bilgiler yarışma
+                            şartnamesinden alınmıştır.
+                            Takımımızın yarışma sonucu
+                            veya başarı iddiası değildir.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <!-- SAĞ TARAFTAKİ KISAYOL MENÜSÜ -->
+
+                <aside class="project-nav"
+                       aria-label="Proje sayfası bölümleri">
+
+                    <strong>PROJE İÇERİĞİ</strong>
+
+                    <a href="#hakkinda">
+                        01 Proje Hakkında
+                    </a>
+
+                    <a href="#amac">
+                        02 Projenin Amacı
+                    </a>
+
+                    <a href="#ozellikler">
+                        03 Sistemin Özellikleri
+                    </a>
+
+                    <a href="#teknolojiler">
+                        04 Kullanılan Teknolojiler
+                    </a>
+
+                    <a href="#surec">
+                        05 Gelişim Süreci
+                    </a>
+
+                    <a href="#gorseller">
+                        06 Proje Görselleri
+                    </a>
+
+                    <a href="#ekip">
+                        07 Ekip ve Görev Dağılımı
+                    </a>
+
+                    <a href="#teknofest">
+                        08 TEKNOFEST Süreci
+                    </a>
+
+                    <a href="#hedefler">
+                        09 Gelecek Hedeflerimiz
+                    </a>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ALT BİLGİ -->
+
+    <footer>
+        <div class="wrap">
+
+            <strong>
+                BARLAS KAYRA TEAM
+            </strong>
+
+            <p>
+                Atatürk Üniversitesi · Erzurum
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- ORTAK JAVASCRIPT -->
+
+    <script src="common.js"></script>
+
+<script>
+    let fotoIndex = 0;
+
+    const fotograflar =
+        document.querySelectorAll(".slider-foto");
+
+    const fotoSayaci =
+        document.getElementById("aktifFoto");
+
+    function fotoDegistir(yon) {
+
+        fotograflar[fotoIndex].classList.remove("aktif");
+
+        fotoIndex =
+            (fotoIndex + yon + fotograflar.length)
+            % fotograflar.length;
+
+        fotograflar[fotoIndex].classList.add("aktif");
+
+        fotoSayaci.textContent = fotoIndex + 1;
+    }
+</script>
+
+</body>
+</html>

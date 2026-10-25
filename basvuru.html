@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- Barlas Kayra Team | Üyelik Başvurusu -->
+<html lang="tr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>
+      Takıma Başvur | Barlas Kayra Team
+    </title>
+    <link href="assets/favicon.png" rel="icon" type="image/png"/>
+    <meta content="#080e18" name="theme-color"/>
+    <meta content="Barlas Kayra Team üyelik başvuru formu." name="description"/>
+    <link href="assets/favicon.png" rel="apple-touch-icon"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+    <header>
+      <nav class="wrap">
+        <a class="brand" href="index.html">
+          <img alt="Barlas Kayra Team logosu" class="brand-logo" height="52" src="assets/barlas-kayra-logo.webp" width="52"/>
+          <span class="brand-text">
+            BARLAS
+            <span>
+              KAYRA
+            </span>
+            <small>
+              TEAM
+            </small>
+          </span>
+        </a>
+        <button aria-controls="nav-links" aria-expanded="false" aria-label="Menüyü aç" class="menu" type="button">
+          ☰
+        </button>
+        <div class="navlinks" id="nav-links">
+          <a href="index.html">
+            ANA SAYFA
+          </a>
+          <a href="ekip.html">
+            EKİBİMİZ
+          </a>
+          <a href="projeler.html">
+            PROJELER
+          </a>
+          <a href="haberler.html">
+            HABERLER
+          </a>
+          <a aria-current="page" class="active" href="basvuru.html">
+            BAŞVURU
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="page-hero">
+        <div class="wrap page-hero-inner">
+          <div class="page-copy">
+            <div class="eyebrow">
+              TAKIMA KATIL
+            </div>
+            <h1>
+              ÜYELİK BAŞVURUSU
+            </h1>
+            <p class="lead">
+              Birlikte öğrenmek ve üretmek için başvuru formunu doldur.
+            </p>
+          </div>
+          <img alt="Barlas Kayra Team amblemi" class="page-logo" height="160" src="assets/barlas-kayra-logo.webp" width="160"/>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap">
+          <div class="notice">
+            Demo form: Henüz bir veri tabanına veya resmî e-posta adresine bağlı değildir. Doldurulan bilgiler sunucuya gönderilmez ve saklanmaz.
+          </div>
+          <form class="form" id="apply-form" style="margin-top:32px">
+            <div class="field">
+              <label for="name">
+                Ad Soyad *
+              </label>
+              <input autocomplete="name" id="name" maxlength="100" name="name" required=""/>
+            </div>
+            <div class="field">
+              <label for="email">
+                E-posta *
+              </label>
+              <input autocomplete="email" id="email" name="email" required="" type="email"/>
+            </div>
+            <div class="field">
+              <label for="department">
+                Bölüm *
+              </label>
+              <input id="department" maxlength="100" name="department" required=""/>
+            </div>
+            <div class="field">
+              <label for="grade">
+                Sınıf *
+              </label>
+              <select id="grade" name="grade" required="">
+                <option value="">
+                  Seçiniz
+                </option>
+                <option>
+                  Hazırlık
+                </option>
+                <option>
+                  1. sınıf
+                </option>
+                <option>
+                  2. sınıf
+                </option>
+                <option>
+                  3. sınıf
+                </option>
+                <option>
+                  4. sınıf
+                </option>
+                <option>
+                  Lisansüstü
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="area">
+                İlgilendiğin alan *
+              </label>
+              <select id="area" name="area" required="">
+                <option value="">
+                  Seçiniz
+                </option>
+                <option>
+                  Yazılım ve yapay zekâ
+                </option>
+                <option>
+                  Görüntü işleme
+                </option>
+                <option>
+                  Elektronik ve gömülü sistemler
+                </option>
+                <option>
+                  Mekanik tasarım
+                </option>
+                <option>
+                  Organizasyon ve iletişim
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="why">
+                Neden katılmak istiyorsun? *
+              </label>
+              <textarea id="why" maxlength="2000" name="motivation" required=""></textarea>
+            </div>
+            <div class="check">
+              <input id="privacy" name="onay" required="" type="checkbox"/>
+              <label for="privacy">
+                Girdiğim bilgilerin başvurumun değerlendirilmesi amacıyla takımla paylaşılmasını kabul ediyorum. Form demo modundaysa gönderim yapılmadığını anladım. *
+              </label>
+            </div>
+            <button class="btn" type="submit">
+              BAŞVURUYU HAZIRLA →
+            </button>
+            <p aria-live="polite" id="form-result" role="status">
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <strong>
+          BARLAS KAYRA TEAM
+        </strong>
+        <p>
+          Atatürk Üniversitesi · Erzurum
+        </p>
+      </div>
+    </footer>
+     <script src="common.js"></script>
+     <script type="module" src="basvuru.js"></script>
+  </body>
+</html>
